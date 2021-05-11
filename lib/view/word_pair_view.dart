@@ -157,6 +157,11 @@ class _WordPairListPageState extends State<WordPairListPage> {
         onPressed: () => _toggleFavourite(wordPair),
         child: _icons[wordPair.favourite],
       ),
+      onLongPress: () => {
+        setState(() {
+          _controller.delete(wordPair);
+        })
+      },
       onTap: () => _updateWordPair(context, wordPair),
     );
   }
